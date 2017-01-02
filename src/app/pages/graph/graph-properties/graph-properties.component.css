@@ -8,6 +8,7 @@
     padding: 5px;
     margin: 20px 0;
     /*height: 400px;*/
+    /*overflow-y: auto*/
 }
 
 label, input {
@@ -15,6 +16,3 @@ label, input {
     font-size: 12px;
 }
 
-#PropertiesZone {
-     overflow-y: auto
-}

@@ -157,7 +157,7 @@ export class CreatorCanvasComponent implements OnInit, OnChanges {
 
         circles
             .attr('name', (d) => { return d.name; })
-            .attr('type', 'station')
+            .attr('type', 'Circle')
             .attr('x', (d) => { return d.x; })
             .attr('y', (d) => { return d.y; })
             .attr('width', this.picSize + 'px')
@@ -183,7 +183,7 @@ export class CreatorCanvasComponent implements OnInit, OnChanges {
 
         squares
             .attr('name', (d) => { return d.name; })
-            .attr('type', 'switch')
+            .attr('type', 'Square')
             .attr('x', (d) => { return d.x; })
             .attr('y', (d) => { return d.y; })
             .attr('width', this.picSize + 'px')
@@ -209,7 +209,7 @@ export class CreatorCanvasComponent implements OnInit, OnChanges {
 
         triangles
             .attr('name', (d) => { return d.name; })
-            .attr('type', 'router')
+            .attr('type', 'Triangle')
             .attr('x', (d) => { return d.x; })
             .attr('y', (d) => { return d.y; })
             .attr('width', this.picSize + 'px')
@@ -257,7 +257,7 @@ export class CreatorCanvasComponent implements OnInit, OnChanges {
             .attr('x', d.x - offset)
             .attr('y', d.y - offset);
         // Set the global selected equipment
-        that.CS.selectedObject = new Shape(type, d.id, d.name);
+        that.CS.selectedShape = new Shape(type, d.id, d.name);
 
         // Set equipment name tooltip
         that.tooltip.transition()
@@ -295,7 +295,7 @@ export class CreatorCanvasComponent implements OnInit, OnChanges {
                 .attr('y', d.y);
         }
         // Reset the global selected equipment
-        that.CS.selectedObject = new Shape('', -1, '');
+        that.CS.selectedShape = new Shape('', -1, '');
         that.hasMoved = false;
         // Reset equipment name tooltip
         that.tooltip.transition()
@@ -346,15 +346,15 @@ export class CreatorCanvasComponent implements OnInit, OnChanges {
     }
 
     CircleClick(_this, that) {
-        that.CS.setSelected(that.CS.selectedObject);
+        that.CS.setSelected(that.CS.selectedShape);
 
         if (that.CS.informations.selectedMode === 'delete') {
-            let shape = that.CS.findCircleFromName(that.CS.selectedObject.name);
+            let shape = that.CS.findCircleFromName(that.CS.selectedShape.name);
 
             if (that.CS.removeShape(shape)) {
                 that.CS.informations.notification = 'Circle ' + shape.name + ' deleted';
                 that.DrawGraph();
-                that.CS.selectedObject.type = '';
+                that.CS.selectedShape.type = '';
                 that.CS.setSelected(null);
             } else {
                 that.CS.informations.notification = 'Circle ' + shape.name + ' not deleted';
@@ -363,15 +363,15 @@ export class CreatorCanvasComponent implements OnInit, OnChanges {
     }
 
     SquareClick(_this, that) {
-        that.CS.setSelected(that.CS.selectedObject);
+        that.CS.setSelected(that.CS.selectedShape);
 
         if (that.CS.informations.selectedMode === 'delete') {
-            let shape = that.CS.findSquareFromName(that.CS.selectedObject.name);
+            let shape = that.CS.findSquareFromName(that.CS.selectedShape.name);
 
             if (that.CS.removeShape(shape)) {
-                that.CS.informations.notification = 'Square ' + that.CS.selectedObject.name + ' deleted';
+                that.CS.informations.notification = 'Square ' + shape.name + ' deleted';
                 that.DrawGraph();
-                that.CS.selectedObject.type = '';
+                that.CS.selectedShape.type = '';
                 that.CS.setSelected(null);
             } else {
                 that.CS.informations.notification = 'Square ' + shape.name + ' not deleted';
@@ -380,15 +380,15 @@ export class CreatorCanvasComponent implements OnInit, OnChanges {
     }
 
     TriangleClick(_this, that) {
-        that.CS.setSelected(that.CS.selectedObject);
+        that.CS.setSelected(that.CS.selectedShape);
 
         if (that.CS.informations.selectedMode === 'delete') {
-            let shape = that.CS.findTriangleFromName(that.CS.selectedObject.name);
+            let shape = that.CS.findTriangleFromName(that.CS.selectedShape.name);
 
             if (that.CS.removeShape(shape)) {
-                that.CS.informations.notification = 'Triangle ' + that.CS.selectedObject.name + ' deleted';
+                that.CS.informations.notification = 'Triangle ' + shape.name + ' deleted';
                 that.DrawGraph();
-                that.CS.selectedObject.type = '';
+                that.CS.selectedShape.type = '';
                 that.CS.setSelected(null);
             } else {
                 that.CS.informations.notification = 'Triangle ' + shape.name + ' not deleted';

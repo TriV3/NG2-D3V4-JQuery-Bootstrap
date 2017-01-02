@@ -1,14 +1,14 @@
 <!doctype html>
 <div #PropertiesZone id="PropertiesZone" [style.height]="size + 'px'">
-    <!--Station properties-->
-    <div id="StationProperties" *ngIf="CS.selectedStation">
-        <h2>{{ CS.selectedStation.name }} details!</h2>
+    <!--Circle properties-->
+    <div id="CircleProperties" *ngIf="CS.selectedCircle">
+        <h2>{{ CS.selectedCircle.name }} details:</h2>
         <div class="row">
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <label>id: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input type="number" [(ngModel)]="CS.selectedStation.id" placeholder="id" />
+                <input type="number" [(ngModel)]="CS.selectedCircle.id" placeholder="id" />
             </div>
         </div>
         <div class="row">
@@ -16,7 +16,7 @@
                 <label>name: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedStation.name" placeholder="name" />
+                <input [(ngModel)]="CS.selectedCircle.name" placeholder="name" />
             </div>
         </div>
         <div class="row">
@@ -24,7 +24,7 @@
                 <label>x: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                {{CS.selectedStation.x | number: '.0-0' }}
+                {{CS.selectedCircle.x | number: '.0-0' }}
             </div>
         </div>
         <div class="row">
@@ -32,19 +32,19 @@
                 <label>y: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                {{CS.selectedStation.y | number: '.0-0' }}
+                {{CS.selectedCircle.y | number: '.0-0' }}
             </div>
         </div>
     </div>
-    <!--Router properties-->
-    <div id="RouterProperties" *ngIf="CS.selectedRouter">
-        <h2>{{ CS.selectedRouter.name }} details!</h2>
+    <!--Triangle properties-->
+    <div id="TriangleProperties" *ngIf="CS.selectedTriangle">
+        <h2>{{ CS.selectedTriangle.name }} details:</h2>
         <div class="row">
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <label>id: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input type="number" [(ngModel)]="CS.selectedRouter.id" placeholder="id" />
+                <input type="number" [(ngModel)]="CS.selectedTriangle.id" placeholder="id" />
             </div>
         </div>
         <div class="row">
@@ -52,7 +52,7 @@
                 <label>name: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedRouter.name" placeholder="name" />
+                <input [(ngModel)]="CS.selectedTriangle.name" placeholder="name" />
             </div>
         </div>
         <div class="row">
@@ -60,7 +60,7 @@
                 <label>x: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                {{CS.selectedRouter.x | number: '.0-0' }}
+                {{CS.selectedTriangle.x | number: '.0-0' }}
             </div>
         </div>
         <div class="row">
@@ -68,19 +68,19 @@
                 <label>y: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                {{CS.selectedRouter.y | number: '.0-0' }}
+                {{CS.selectedTriangle.y | number: '.0-0' }}
             </div>
         </div>
     </div>
-    <!--Switch properties-->
-    <div id="SwitchProperties" *ngIf="CS.selectedSwitch">
-        <h3>{{ CS.selectedSwitch.name }} details!</h3>
+    <!--Square properties-->
+    <div id="SquareProperties" *ngIf="CS.selectedSquare">
+        <h2>{{ CS.selectedSquare.name }} details:</h2>
         <div class="row">
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <label>id: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input type="number" [(ngModel)]="CS.selectedSwitch.id" placeholder="id" />
+                <input type="number" [(ngModel)]="CS.selectedSquare.id" placeholder="id" />
             </div>
         </div>
         <div class="row">
@@ -88,7 +88,7 @@
                 <label>name: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.name" placeholder="name" />
+                <input [(ngModel)]="CS.selectedSquare.name" placeholder="name" />
             </div>
         </div>
         <div class="row">
@@ -96,7 +96,7 @@
                 <label>x: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                {{CS.selectedSwitch.x | number: '.0-0' }}
+                {{CS.selectedSquare.x | number: '.0-0' }}
             </div>
         </div>
         <div class="row">
@@ -104,127 +104,7 @@
                 <label>y: </label>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                {{CS.selectedSwitch.y | number: '.0-0' }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Model: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_model" placeholder="Switch model" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Link: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_link" placeholder="Switch link" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Open Ring?: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_open_ring" placeholder="Switch model" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Fail?: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_fail" placeholder="Is Switch Failed" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 2: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port2" placeholder="Port equipment" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 3: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port3" placeholder="Port equipment" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 4: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port4" placeholder="Port equipment" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 5: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port5" placeholder="Port equipment" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 6: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port6" placeholder="Port equipment" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 7: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port7" placeholder="Port equipment" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 8: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port8" placeholder="Port equipment" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 9: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port9" placeholder="Port equipment" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 10: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port10" placeholder="Port equipment" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 11: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port11" placeholder="Port equipment" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <label>Port 12: </label>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <input [(ngModel)]="CS.selectedSwitch.Switch_Port12" placeholder="Port equipment" />
+                {{CS.selectedSquare.y | number: '.0-0' }}
             </div>
         </div>
     </div>
