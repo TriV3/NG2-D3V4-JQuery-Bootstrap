@@ -249,7 +249,7 @@ export class CreatorCanvasComponent implements OnInit, OnChanges {
         let object = d3.select(_this);
         let type = String(object.attr('type'));
 
-        // // Resize equipment with picBigSize value
+        // Resize equipment with picBigSize value
         let offset = (that.picBigSize - that.picSize) / 2;
         object
             .attr('height', that.picBigSize)
