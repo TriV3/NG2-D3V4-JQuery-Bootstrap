@@ -1,0 +1,15 @@
+#NotificationZone {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2em;
+    border-color: #888;
+    background-color: #ccc;
+    margin-bottom: 20px;
+}
+
+#notification {
+    padding: 8px 0 8px 3%;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: justify;
+}

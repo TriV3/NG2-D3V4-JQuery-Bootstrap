@@ -1,0 +1,32 @@
+#architool {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2em;
+    border-color: #888;
+    padding: 5px;
+    margin-top: 20px;
+    background-color: #ccc;
+}
+
+#architool img {
+    max-width: 45px;
+    max-height: 45px;
+    padding: 1px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: -4px 6px #999;
+}
+
+#architool img:hover {
+    /*box-shadow: 0px 12px 22px 1px #666;*/
+    box-shadow: -4px 6px #777;
+}
+
+#architool img:active {
+    /*box-shadow: 0px 12px 22px 1px #222;*/
+    box-shadow: -1px 2px #666;
+    transform: translateY(4px);
+}

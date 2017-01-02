@@ -1,0 +1,20 @@
+#PropertiesZone {
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1em;
+    border-color: #888;
+    background-color: #ddd;
+    padding: 5px;
+    margin: 20px 0;
+    /*height: 400px;*/
+}
+
+label, input {
+
+    font-size: 12px;
+}
+
+#PropertiesZone {
+     overflow-y: auto
+}

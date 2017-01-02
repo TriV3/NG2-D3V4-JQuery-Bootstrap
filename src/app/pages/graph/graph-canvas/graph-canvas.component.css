@@ -1,0 +1,45 @@
+#archiCreator {
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1em;
+    border-color: #888;
+    background-color: #ddd;
+    padding: 5px;
+    margin: 20px 0;
+}
+
+.dot circle {
+    fill: lightsteelblue;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.dot circle.dragging {
+    fill: red;
+    stroke: brown;
+}
+
+
+/** >>> .grid >>> line {*/
+
+.grid line {
+    fill: none;
+    stroke: #bbb;
+    shape-rendering: crispEdges;
+    vector-effect: non-scaling-stroke;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    color: #eaeaea;
+    background: #404040;
+    border: 2px solid black;
+    border-radius: 8px;
+    pointer-events: none;
+    vertical-align: middle;
+}
