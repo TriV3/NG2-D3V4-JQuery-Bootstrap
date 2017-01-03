@@ -11,7 +11,9 @@ This project was created to demonstrate the use of some libraries with Angular2:
 
 ### Install
 
-Install bootstrap dependency: `npm install bootstrap --save`
+Install bootstrap dependency: `npm install bootstrap -S`
+
+Install jQuery typings: `npm install @types/bootstrap -D`
 
 Edit the file angular-cli.json as following:
 
@@ -21,14 +23,16 @@ Edit the file angular-cli.json as following:
     "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 ],
 "scripts": [
+    "../node_modules/jquery/dist/jquery.js",
     "../node_modules/bootstrap/dist/js/bootstrap.js"
+],
 ~~~
 
+>The script part is usefull only if others libraries need jQuery as dependency
 
-Install JQuery dependency: `npm install jquery --save`
+Install JQuery dependency: `npm install jquery -S`
 
-Install jQuery typings: `npm install @types/jquery --D`
-
+Install jQuery typings: `npm install @types/jquery -D`
 
 
 
@@ -52,9 +56,9 @@ $("#myDiv").css( 'border', '3px solid red' );
 
 ## D3v4 integration
 
-Install d3 library: `npm install d3 --save`
+Install d3 library: `npm install d3 -S`
 
-Install d3 typings: `npm install @types/d3 --D`
+Install d3 typings: `npm install @types/d3 -D`
 
 Import the d3 library and use it as d3 object: `import * as d3 from 'd3';`
 
