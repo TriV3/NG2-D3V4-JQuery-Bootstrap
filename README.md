@@ -13,7 +13,11 @@ This project was created to demonstrate the use of some libraries with Angular2:
 
 Install bootstrap dependency: `npm install bootstrap -S`
 
-Install jQuery typings: `npm install @types/bootstrap -D`
+Install bootstrap typings: `npm install @types/bootstrap -D`
+
+Install JQuery dependency: `npm install jquery -S`
+
+Install jQuery typings: `npm install @types/jquery -D`
 
 Edit the file angular-cli.json as following:
 
@@ -23,17 +27,12 @@ Edit the file angular-cli.json as following:
     "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 ],
 "scripts": [
-    "../node_modules/jquery/dist/jquery.js",
+    "../node_modules/jquery/dist/jquery.js", 
     "../node_modules/bootstrap/dist/js/bootstrap.js"
 ],
 ~~~
 
->The script part is usefull only if others libraries need jQuery as dependency
-
-Install JQuery dependency: `npm install jquery -S`
-
-Install jQuery typings: `npm install @types/jquery -D`
-
+>Import jQuery script in angular-cli.json only if others libraries need jQuery as dependency like bootstrap
 
 
 
@@ -45,13 +44,19 @@ You are now able to use bootstrap in your html files.
 
 Import the jQuery library and use it as $ object:
 
-`import * as $ from 'jquery';` // use $ or any variable you prefer
+~~~javascript
+import * as $ from 'jquery'; // use $ or any variable you prefer
+~~~
+
+>Create the jQuery variable from import only if the script hasn't been imported in angular-cli.json
+>Otherwise the global import make $ and jQuery variable directly available
 
 ~~~javascript
 $('#myDiv').append('<h2>Hello world</h2>');
 $("#myDiv").css( 'border', '3px solid red' );
 ~~~
 
+>Now you can use intellisense for jQuery
 
 
 ## D3v4 integration

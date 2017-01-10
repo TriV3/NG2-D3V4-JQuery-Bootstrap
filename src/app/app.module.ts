@@ -12,7 +12,6 @@ import { CreatorToolsComponent } from './pages/graph/graph-tools/graph-tools.com
 
 import { CreatorService } from './shared/graph-creator.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
